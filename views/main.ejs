@@ -1,0 +1,22 @@
+<%- include('./parts/header') %>
+    <div class='container '>
+            <div >
+                <div  class="row justify-content-center ">
+                            <% result.forEach((thing) => {  %>
+                            <div class="card" style="width: 30%;">
+                                <img src="<%- thing.author.avatar_url %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title"><strong>Author's id :</strong> <%- thing.author.login %></h5>
+                                  <h5 class="card-title"><strong>Author's id :</strong> <%- thing.author.id %></h5>
+                                  <p class="card-text"><strong>Commit message :</strong> <%- thing.commit.message %> </p>
+                                  <p class="card-text"><strong>Commit's url :</strong> <%- thing.commit.url %> </p>
+                                  <p class="card-text"><strong>Commit's date :</strong> <%- thing.commit.committer.date %> </p>
+                                  <a href="/<%- thing.author.login %>"  class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                            <%})%>
+                 </div>  
+                </div>
+        </div>
+    </div>
+<%- include('./parts/footer') %>
